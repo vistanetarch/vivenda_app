@@ -1,0 +1,18 @@
+<ion-toolbar class="toolbar_class" style="background-color: white;">
+  <ion-buttons slot="secondary"  (click)="home()" >
+    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;"></ion-icon>Indietro
+  </ion-buttons>
+
+  <ion-title>Calendario </ion-title>
+
+</ion-toolbar>
+
+<ion-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</ion-content>

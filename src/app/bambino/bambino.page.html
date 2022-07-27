@@ -1,0 +1,48 @@
+<ion-toolbar class="toolbar_class" style="background-color: white;">
+  <ion-buttons slot="secondary" (click)="home()">
+    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;"  ></ion-icon>Indietro
+  </ion-buttons>
+
+  <ion-title>Inserisci i dati </ion-title>
+</ion-toolbar>
+
+<ion-content>
+
+  <div class="container_img">
+    <img src="http://vivenda.sviluppo.host/wp-content/uploads/2022/04/cropped-ROMANO.jpg" class="broccolo" >
+  </div>
+
+  <div class="body">
+    <div class="container_input">
+      <ion-item  class="custom_native" >
+  
+        <ion-label position="floating">Nome del bambino</ion-label>
+      
+        <ion-input type="string" [(ngModel)]="nomeB" ></ion-input>
+      
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating"  >Cognome del Bambino</ion-label>
+    
+        <ion-input [(ngModel)]="cognomeB" type="string" class="input_custom"></ion-input>
+    
+      </ion-item>
+
+      <ion-list style="margin-top: 1rem;">
+        <ion-item>
+          <ion-select placeholder="Classe">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Oranges</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-button color="success" style="margin-top: 1.2rem;" (click)="dati_bambino()" >Salva </ion-button>
+    </div>
+    
+  
+  </div>
+
+</ion-content>
+

@@ -1,0 +1,50 @@
+.container_img
+{   
+    margin-top: 1.5rem;
+    height: 40%;
+    text-align: center;
+}
+
+.broccolo
+{
+    height: 100%;
+    background-size: cover;
+}
+
+.body
+{   
+    border-top: 1px solid #80808099;
+    margin: 1rem;
+    height: 60%;
+}
+.img_card
+{
+    padding: 1rem;
+    border-bottom: 1.7px solid #80808099;
+}
+
+.content_card
+{
+    height: 5rem;
+    overflow: hidden;
+    
+}
+.container_nome
+{   
+
+    height: 50%;
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.container_cognome
+{   
+    margin-top: 0.5rem;
+    height: 50%;
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

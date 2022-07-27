@@ -1,0 +1,74 @@
+<ion-toolbar class="toolbar_class" style="background-color: white;">
+  <ion-buttons slot="secondary">
+    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;" (click)="login()" ></ion-icon>Indietro
+  </ion-buttons>
+
+  <ion-title>Registrati</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <div>
+    <div class="container_img">
+      <img src="http://vivenda.sviluppo.host/wp-content/uploads/2022/04/cropped-ROMANO.jpg" class="broccolo" >
+    </div>
+  </div>
+
+  <div class="body">
+   
+    <div class="container_input">
+      <ion-item>
+        <ion-label position="floating"  >Email</ion-label>
+        <ion-input [(ngModel)]="email" type="email" class="input_custom"></ion-input>
+      </ion-item>
+      <div style="text-align:left ;">
+        <p *ngIf="err_email" style="color:red; margin-left: 1rem;">* Campo richiesto</p>
+      </div>
+     
+     
+   
+      <ion-item>
+        <ion-label position="floating"  >Nome</ion-label>
+        <ion-input [(ngModel)]="nome" type="string" class="input_custom"></ion-input>
+      </ion-item>
+      <div style="text-align: left;">
+        <p  *ngIf="err_nome" style="color: red; margin-left: 1rem;">* Campo richiesto</p>
+      </div>
+      
+     
+
+
+      <ion-item>
+        <ion-label position="floating"  >Cognome</ion-label>
+        <ion-input [(ngModel)]="cognome" type="string" class="input_custom"></ion-input>
+      </ion-item>
+      <div style="text-align: left;">
+        <p  *ngIf="err_cognome" style="color: red; margin-left: 1rem;">* Campo richiesto</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating"  >Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password" class="input_custom"></ion-input>
+      </ion-item>
+      
+      <div style="text-align: left;">
+        <p  *ngIf="err_pass" style="color: red; margin-left: 1rem;">* Campo richiesto</p>
+      </div>
+
+      <!-- <div class="bambino" *ngFor="let bambino of bambini"> 
+        <app-bambino></app-bambino>
+        
+        <div style="width:100% ; text-align:left">
+         <ion-icon name="trash-outline" style="font-size:1.2rem; margin-top: 1rem; margin-left: 1rem;" id="{{bambino}}" (click)="elimina_bambino(bambino)"></ion-icon>
+        </div>
+      
+      </div> -->
+
+     <!--  <ion-button color="primary" style="margin-top: 1.5rem;" (click)="add_bambino()">Inserisci i dati personali del bambino</ion-button> -->
+      <br>
+      <ion-button color="success" style="margin-top: 0.5rem;" (click)="dati_bambino()" >Salva </ion-button>
+      
+
+    </div>
+  </div>
+  
+</ion-content>
