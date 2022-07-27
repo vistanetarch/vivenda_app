@@ -18,4 +18,10 @@ export class InserimentoService {
   {
     return this.http.post("https://lux.v-net.it/api/inserimento_genitore.php",{dati:obj});
   }
+
+  cntr_login(username, password)
+  {
+    return this.http.post("https://lux.v-net.it/api/cntr_login.php",{username:username, password:password });
+  }
+
 }

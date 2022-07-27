@@ -12,7 +12,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
-
+import { IonicStorageModule } from '@ionic/storage';  
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     BrowserAnimationsModule, 
     MatSortModule,
-  
+    IonicStorageModule.forRoot(),
     HttpClientModule,
     
   ],
