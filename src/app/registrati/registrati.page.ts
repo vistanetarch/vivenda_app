@@ -1,6 +1,7 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-import { BambinoPage } from '../bambino/bambino.page';
+import { InserimentoService } from '../servizi/inserimento.service';
+
 
 @Component({
   selector: 'app-registrati',
@@ -17,16 +18,19 @@ export class RegistratiPage implements OnInit {
   check_campi=true
   err_nome=false;
   err_email=false;
-  err_pass=false
+  err_pass=false;
+  err_Rpass=false;
   err_cognome=false;
 
   email
   nome
   cognome
   password
+  Rpassword
   constructor(
 
-    private _router: Router
+    private _router: Router,
+    private inserimentoService:InserimentoService
   ) { }
 
   ngOnInit() {
@@ -48,7 +52,7 @@ export class RegistratiPage implements OnInit {
 
   array_bambini_result=[]
   array_eliminati=[];
-  
+  scritta_err_password="* Campo richiesto";
  
   
   dati_bambino()
@@ -74,11 +78,45 @@ export class RegistratiPage implements OnInit {
       this.check_campi=false;
       this.err_pass=true;
     }
-
-   /*  if(this.check_campi)
+    if(!this.Rpassword)
     {
+      this.check_campi=false;
+      this.err_Rpass=true;
+      
+    }
+    else
+    {
+      console.log(this.Rpassword)
+      console.log(this.password)
+      if(this.Rpassword!=this.password)
+      {
+        console.log("ciao")
+        this.err_Rpass=true;
+        this.check_campi=false;
+        this.scritta_err_password="Pasword errata";
 
-      const bambini = this.bambini_dati.toArray()
+      }
+      
+    }
+
+    if(this.check_campi)
+    {
+      let obj=
+      {
+        nome:this.nome,
+        cognome:this.cognome,
+        password:this.password,
+        email:this.email
+      }
+
+      let res=this.inserimentoService.salva_genitore(obj)
+      res.subscribe(r=>{
+
+        console.log(r)
+      
+      })
+
+     /*  const bambini = this.bambini_dati.toArray()
 
       for (let index = 0; index < bambini.length; index++) 
       {  
@@ -97,8 +135,9 @@ export class RegistratiPage implements OnInit {
           this.array_bambini_result.push(obj)
         }
         
-      }
-    } */
+      } */
+      
+    } 
     
 
     console.log(this.array_bambini_result)

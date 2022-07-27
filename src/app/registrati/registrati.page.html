@@ -1,12 +1,14 @@
-<ion-toolbar class="toolbar_class" style="background-color: white;">
-  <ion-buttons slot="secondary">
-    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;" (click)="login()" ></ion-icon>Indietro
-  </ion-buttons>
 
-  <ion-title>Registrati</ion-title>
-</ion-toolbar>
 
 <ion-content>
+  <ion-toolbar class="toolbar_class" color="white">
+    <ion-buttons slot="secondary">
+      <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;" (click)="login()" ></ion-icon>
+    </ion-buttons>
+  
+    <ion-title>Registrati</ion-title>
+  </ion-toolbar>
+
   <div>
     <div class="container_img">
       <img src="http://vivenda.sviluppo.host/wp-content/uploads/2022/04/cropped-ROMANO.jpg" class="broccolo" >
@@ -24,8 +26,6 @@
         <p *ngIf="err_email" style="color:red; margin-left: 1rem;">* Campo richiesto</p>
       </div>
      
-     
-   
       <ion-item>
         <ion-label position="floating"  >Nome</ion-label>
         <ion-input [(ngModel)]="nome" type="string" class="input_custom"></ion-input>
@@ -34,9 +34,6 @@
         <p  *ngIf="err_nome" style="color: red; margin-left: 1rem;">* Campo richiesto</p>
       </div>
       
-     
-
-
       <ion-item>
         <ion-label position="floating"  >Cognome</ion-label>
         <ion-input [(ngModel)]="cognome" type="string" class="input_custom"></ion-input>
@@ -54,6 +51,15 @@
         <p  *ngIf="err_pass" style="color: red; margin-left: 1rem;">* Campo richiesto</p>
       </div>
 
+      <ion-item>
+        <ion-label position="floating"  >Ripeti password</ion-label>
+        <ion-input [(ngModel)]="Rpassword" type="password" class="input_custom"></ion-input>
+      </ion-item>
+      
+      <div style="text-align: left;">
+        <p  *ngIf="err_Rpass" style="color: red; margin-left: 1rem;">{{scritta_err_password}}</p>
+      </div>
+
       <!-- <div class="bambino" *ngFor="let bambino of bambini"> 
         <app-bambino></app-bambino>
         
@@ -65,7 +71,11 @@
 
      <!--  <ion-button color="primary" style="margin-top: 1.5rem;" (click)="add_bambino()">Inserisci i dati personali del bambino</ion-button> -->
       <br>
-      <ion-button color="success" style="margin-top: 0.5rem;" (click)="dati_bambino()" >Salva </ion-button>
+
+      <div style="width: 100% ; text-align: center;">
+        <ion-button color="success" style="margin-top: 0.5rem; width: 95%; margin-left: 0.5rem;" (click)="dati_bambino()" >Salva </ion-button>
+      </div>
+     
       
 
     </div>

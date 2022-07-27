@@ -1,29 +1,54 @@
 
-<ion-content style="height:100%;">
+
+<ion-content >
+  <ion-toolbar class="toolbar_class" color="white" >
+ 
+    <ion-title>Home </ion-title>
+    <ion-buttons slot="end"  (click)="home()" >
+      
+      <ion-icon name="person-circle-outline" style=" font-size: 1.5rem; margin-right: 0.5rem;"></ion-icon>
+    </ion-buttons>
   
-  
+  </ion-toolbar>
+
     <div class="container_img">
       <img src="http://vivenda.sviluppo.host/wp-content/uploads/2022/04/cropped-ROMANO.jpg" class="broccolo" >
     </div>
 
     <div class="body">
       <div style="display: flex;">
+        
+        
+        <div style="width:50% ;">
 
-        <ion-card style="width:50% ;" (click)="viewCalendario()">
-          <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
+          <ion-card  (click)="addBambino()" style="    height: 13.3rem;">
+            <div style="justify-content: center; padding-top:0.9rem; padding-bottom: 0.9rem; display: flex;">
+              <ion-icon name="add-circle-outline" style="margin-right: 0.4rem; color: rgb(10, 10, 10); padding-bottom: 1rem; "></ion-icon><span style="color: rgb(10, 10, 10);">Aggiugni</span>
+            </div>
+            <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
+            
+          </ion-card>
+        </div>
+        
+        <div style="width:50% ;">
 
-          <ion-card-content class="content_card" >
-           <div class="container_nome">Gianfraaaaaaaaaaaaaaaaaaaa</div>
-           <div class="container_cognome">Poddadadadadadaddaada</div>
-          </ion-card-content>
-        </ion-card>
+          <ion-card  (click)="viewCalendario()" style="    height: 13.3rem;">
+            <div style="text-align: center; padding-top:0.9rem; padding-bottom: 0.9rem; ">
+              <div class="nome">
+                   dwdwdadwa                
+              </div>
+          
+              <div class="cognome">
+                dwdwdadwa                
+              </div>
+            </div>
+            <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
+          </ion-card>
+          
+        </div>
+        
 
-        <ion-card style="width:50% ;"  (click)="addBambino()">
-          <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
-          <ion-card-content class="content_card">
-            <ion-icon name="add-circle-outline"></ion-icon> Aggiungi 
-          </ion-card-content>
-        </ion-card>
+        
 
       </div>
   

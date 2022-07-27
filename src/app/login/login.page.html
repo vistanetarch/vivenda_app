@@ -10,7 +10,7 @@
     <div class="container_input">
       <ion-item>
         <ion-label position="floating"  >Email</ion-label>
-        <ion-input [(ngModel)]="email" type="email" (keyup)="active_btn($value, 'email')"></ion-input>
+        <ion-input [(ngModel)]="email" type="email" (keyup)="active_btn('email')"></ion-input>
       </ion-item>
       
       <div *ngIf="!check_email" style="text-align: left; margin-left: 1rem;">
@@ -21,7 +21,7 @@
 
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" (keyup)="active_btn($value, 'password')" ></ion-input>
+        <ion-input type="password" [(ngModel)]="password" (keyup)="active_btn('password')" ></ion-input>
       </ion-item>
 
       <div *ngIf="!check_password" style="text-align: left; margin-left: 1rem;">

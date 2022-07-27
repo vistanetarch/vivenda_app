@@ -1,8 +1,12 @@
 .container_img
 {   
-    margin-top: 1.5rem;
+
     height: 40%;
     text-align: center;
+}
+.toolbar_class
+{
+    height: 5%;
 }
 
 .broccolo
@@ -14,14 +18,16 @@
 .body
 {   
     border-top: 1px solid #80808099;
-    margin: 1rem;
-    height: 60%;
+    height: 50%;
 }
 .img_card
 {
+    margin-bottom: -0.5rem;
     padding: 1rem;
-    border-bottom: 1.7px solid #80808099;
+    padding-bottom: 0rem;
+    padding-top: 0.1rem;
 }
+
 
 .content_card
 {
@@ -29,22 +35,22 @@
     overflow: hidden;
     
 }
-.container_nome
+.nome
 {   
 
-    height: 50%;
     white-space: nowrap; 
     width: 100%; 
     overflow: hidden;
     text-overflow: ellipsis; 
+    color: rgb(10, 10, 10);
 }
 
-.container_cognome
+.cognome
 {   
-    margin-top: 0.5rem;
-    height: 50%;
+   
     white-space: nowrap; 
     width: 100%; 
     overflow: hidden;
+    color: rgb(10, 10, 10);
     text-overflow: ellipsis; 
 }

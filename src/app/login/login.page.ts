@@ -32,21 +32,40 @@ export class LoginPage implements OnInit {
   active_email=false
   btn_active=false
 
-  active_btn(value, type)
+  active_btn( type)
   {
-
+    
     if(type=="password")
     {
-      this.active_pass=true;
+      if(this.password!="")
+      {
+        this.active_pass=true;
+      }
+      else
+      {
+        this.active_email=false;
+      }
     }
 
     if(type=="email")
     {
-      this.active_email=true;
+      if(this.email!="")
+      {
+        this.active_email=true;
+      }
+      else
+      {
+        this.active_email=false;
+      }
+     
     }
     if(this.active_email && this.active_pass)
     {
       this.btn_active=true;
+    }
+    else
+    {
+      this.btn_active=false;
     }
     
   }
