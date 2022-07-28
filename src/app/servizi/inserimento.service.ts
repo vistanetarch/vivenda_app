@@ -18,6 +18,11 @@ export class InserimentoService {
   {
     return this.http.post("https://lux.v-net.it/api/inserimento_genitore.php",{dati:obj});
   }
+  
+  salva_bambino(obj) 
+  {
+    return this.http.post("https://lux.v-net.it/api/inserimento_bambino.php",{dati:obj});
+  }
 
   cntr_login(username, password)
   {

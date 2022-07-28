@@ -1,6 +1,6 @@
-<ion-toolbar class="toolbar_class" style="background-color: white;">
+<ion-toolbar class="toolbar_class" color="white">
   <ion-buttons slot="secondary" (click)="home()">
-    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;"  ></ion-icon>Indietro
+    <ion-icon name="chevron-back-outline" style="color: red; font-size: 1.5rem;"  ></ion-icon>
   </ion-buttons>
 
   <ion-title>Inserisci i dati </ion-title>
@@ -31,14 +31,17 @@
 
       <ion-list style="margin-top: 1rem;">
         <ion-item>
-          <ion-select placeholder="Classe">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Oranges</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
+          <ion-select placeholder="Classe" [(ngModel)]="classe_select" >
+            <ion-select-option *ngFor="let classe of classi" [value]="classe.cid">{{classe.nome}}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
-      <ion-button color="success" style="margin-top: 1.2rem;" (click)="dati_bambino()" >Salva </ion-button>
+      <div style="text-align:center ; width: 100%;">
+
+        <ion-button color="success" style="margin-top: 1.2rem; width: 94%; margin-left: 0.7rem;" (click)="dati_bambino()" >Salva </ion-button>
+      
+      </div>
+      
     </div>
     
   

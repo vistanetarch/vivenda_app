@@ -5,7 +5,6 @@
  
     <ion-title>Home </ion-title>
     <ion-buttons slot="end"  (click)="home()" >
-      
       <ion-icon name="person-circle-outline" style=" font-size: 1.5rem; margin-right: 0.5rem;"></ion-icon>
     </ion-buttons>
   
@@ -16,10 +15,10 @@
     </div>
 
     <div class="body">
-      <div style="display: flex;">
+      <div style="display: flex;" *ngFor="let bambino of bambini; let first = first;">
         
         
-        <div style="width:50% ;">
+        <div style="width:50% ;" *ngIf="first">
 
           <ion-card  (click)="addBambino()" style="    height: 13.3rem;">
             <div style="justify-content: center; padding-top:0.9rem; padding-bottom: 0.9rem; display: flex;">
@@ -30,21 +29,21 @@
           </ion-card>
         </div>
         
-        <div style="width:50% ;">
-
-          <ion-card  (click)="viewCalendario()" style="    height: 13.3rem;">
-            <div style="text-align: center; padding-top:0.9rem; padding-bottom: 0.9rem; ">
-              <div class="nome">
-                   dwdwdadwa                
+        <div style="width:50% ;" >
+          <div style="width:100% ;" >
+            <ion-card  (click)="viewCalendario()" style="    height: 13.3rem;">
+              <div style="text-align: center; padding-top:0.9rem; padding-bottom: 0.9rem; ">
+                <div class="nome">
+                  {{bambino.nome}}                
+                </div>
+            
+                <div class="cognome">
+                  {{bambino.cognome}}              
+                </div>
               </div>
-          
-              <div class="cognome">
-                dwdwdadwa                
-              </div>
-            </div>
-            <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
-          </ion-card>
-          
+              <img src="https://vivenda.sviluppo.host/wp-content/uploads/2022/04/baby-boy.png" class="img_card">
+            </ion-card>
+          </div>          
         </div>
         
 

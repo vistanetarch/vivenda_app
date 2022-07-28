@@ -32,14 +32,15 @@ export class LoginPage implements OnInit {
 
      if(this.check_password && this.check_email)
      {
-        console.log("entra")
         let res = this.inserimentoService.cntr_login(this.email, this.password)
         res.subscribe(r=>{
         console.log(r)
         if(r)
         {
-          /* this._router.navigate(["/home"]); */
-          this.storage.set('uid', r);
+          this.storage.set('token', r);
+          this.storage.set('email', this.email);
+          this._router.navigate(["/home"]); 
+          
          /*  this.storage.get('uid').then((val) => 
           {
             console.log(val)
@@ -75,7 +76,7 @@ export class LoginPage implements OnInit {
       }
       else
       {
-        this.active_email=false;
+        this.active_pass=false;
       }
     }
 

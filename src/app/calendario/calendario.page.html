@@ -1,4 +1,4 @@
-<ion-toolbar class="toolbar_class" color="white" style=" border-bottom:1px solid #808080ab">
+<ion-toolbar class="toolbar_class" color="white" >
   <ion-buttons slot="secondary"  (click)="home()" >
     <ion-icon name="chevron-back-outline" style=" font-size: 1.5rem;" color="success"></ion-icon>
   </ion-buttons>
@@ -12,11 +12,17 @@
 
     <mat-form-field appearance="legacy">
       <mat-label>Data del pranzo</mat-label>
-      <input matInput [matDatepicker]="picker"> 
+      <input matInput [matDatepicker]="picker" (dateChange)="cambia_data($event)"> 
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
+  </div>
+
+  <div *ngFor="let prodotto of prodotti">
+
+    <p>{{prodotto.nome}}</p>
+    
   </div>
  
 </ion-content>
