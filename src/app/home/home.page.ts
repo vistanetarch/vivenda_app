@@ -12,7 +12,8 @@ import { CalendarioService } from '../servizi/calendario.service';
 export class HomePage implements OnInit {
   token
   bambini
-  
+  add_b
+
   constructor(
 
     private router: Router,
@@ -22,6 +23,7 @@ export class HomePage implements OnInit {
     ) { }
 
   ngOnInit() {
+
     this.get_bambini()
   }
 
@@ -31,7 +33,12 @@ export class HomePage implements OnInit {
     this.router.navigate(["/bambino"])
   
   }
-  
+
+  ionViewWillEnter()
+  {
+    this.get_bambini()
+  }
+
   get_bambini()
   { 
     this.storage.get("token").then((token) => {
@@ -41,7 +48,15 @@ export class HomePage implements OnInit {
       res.subscribe(r=>{
 
         console.log(r)
-        this.bambini=r
+        if(r)
+        {
+          this.bambini=r
+        }
+        else
+        {
+          this.add_b=true
+        }
+        
       
       })
 

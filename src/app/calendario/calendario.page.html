@@ -1,13 +1,14 @@
 <ion-toolbar class="toolbar_class" color="white" >
   <ion-buttons slot="secondary"  (click)="home()" >
-    <ion-icon name="chevron-back-outline" style=" font-size: 1.5rem;" color="success"></ion-icon>
+    <ion-icon name="chevron-back-outline" style=" font-size: 1.5rem;" color="verde_vivenda"></ion-icon>
   </ion-buttons>
 
-  <ion-title>Calendario </ion-title>
+  <ion-title color="verde_vivenda" style="color: #81c41d">Calendario </ion-title>
 
 </ion-toolbar>
 
 <ion-content>
+
   <div class="body">
 
     <mat-form-field appearance="legacy">
@@ -19,10 +20,42 @@
 
   </div>
 
-  <div *ngFor="let prodotto of prodotti">
+  <div style=" width: 90%;"> 
+    <div style="margin-left: 0.7rem; margin-top: 1rem;"  *ngFor="let spuntino of spuntini; let i = index">
 
-    <p>{{prodotto.nome}}</p>
-    
+      <h2 *ngIf="i<=0 " style="color:#81c41d">{{spuntino.tipologia_pasto}}</h2>
+      <div style="display: flex;" *ngIf="spuntino.nome">
+        <ion-item style="margin-left:-1rem ;" (click)="get_nutrionale(spuntino.pasto_pid)"> <ion-icon name="fast-food-outline" style="padding-right: 0.8rem;"></ion-icon> {{spuntino.nome}}</ion-item>
+      </div>
+       
+
+    </div>
+
+    <div style="margin-left: 0.7rem; margin-top: 1rem;"  *ngFor="let pranzo of pranzi; let i = index">
+
+      <h2 *ngIf="i<=0 " style="color:#81c41d">{{pranzo.tipologia_pasto}}</h2>
+      <div style="display: flex ;" *ngIf="pranzo.nome">
+  
+        <ion-item style="margin-left:-1rem ;" (click)="get_nutrionale(pranzo.pasto_pid)"> <ion-icon name="fast-food-outline" style="padding-right: 0.8rem;"></ion-icon> {{pranzo.nome}}</ion-item>
+      </div>
+      
+
+    </div>
+
+  
+    <div style="margin-left: 0.7rem; margin-top: 1rem;"  *ngFor="let merenda of merende; let i = index">
+
+      <h2 *ngIf="i<=0 " style="color:#81c41d">{{merenda.tipologia_pasto}}</h2>
+      <div style="display: flex;" *ngIf="merenda.nome">
+        
+        <ion-item style="margin-left:-1rem ;" (click)="get_nutrionale(merenda.pasto_pid)"> <ion-icon name="fast-food-outline" style="padding-right: 0.8rem;"></ion-icon> {{merenda.nome}}</ion-item>
+  
+      </div>
+     
+
   </div>
+
+  </div>
+  
  
 </ion-content>

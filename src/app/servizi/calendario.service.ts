@@ -23,4 +23,9 @@ export class CalendarioService {
     return this.http.post("https://lux.v-net.it/api/get_giorno_calendario.php", {data:data})
   }
 
+  get_valore_nutrizionale(pid)
+  {
+    return this.http.post("https://lux.v-net.it/api/get_valore_nutrizionale_from_pid.php", {pid:pid});
+  }
+
 }

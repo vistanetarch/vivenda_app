@@ -1,0 +1,28 @@
+
+<ion-content>
+
+  <div class="toolbar_class">
+    <ion-toolbar  color="white">
+      <ion-buttons slot="secondary">
+        <ion-icon name="chevron-back-outline"  style=" font-size: 1.5rem;" (click)="torna_calendario()" ></ion-icon>
+      </ion-buttons>
+    
+      <ion-title style="color: #81c41d">Informazioni nutrizionali</ion-title>
+    </ion-toolbar>
+  </div>
+
+  <ion-list *ngFor="let valore of result" style="padding-right: 1rem;">
+    <ion-item>
+      <div style="display: flex; width: 100%;">
+        <div style="width: 80%;">
+          <ion-label>{{valore.nome}}  </ion-label>
+        </div>
+        <div style="width: 30%;">
+          <span style="padding-left:1rem ;"> {{valore.quantita}} g</span>
+        </div>
+      </div>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

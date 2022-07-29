@@ -29,4 +29,9 @@ export class InserimentoService {
     return this.http.post("https://lux.v-net.it/api/cntr_login.php",{username:username, password:password });
   }
 
+  cntr_token(token)
+  {
+    return this.http.post("https://lux.v-net.it/api/cntr_token.php",{token:token});
+  }
+
 }
